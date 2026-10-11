@@ -1,0 +1,287 @@
+{
+  "presentation_date": "2026-10-11",
+  "model_run": "2026-10-06",
+  "summary": {
+    "ame_general": {
+      "rows": 32217,
+      "predictors": 383,
+      "cells": 24895,
+      "eligible": 21580,
+      "controls": 27718,
+      "BY": 674,
+      "BH": 2083,
+      "representations": {
+        "phonemes": {
+          "BY": 211,
+          "BH": 435
+        },
+        "phoneme_features": {
+          "BY": 163,
+          "BH": 352
+        },
+        "phoneme_bigrams": {
+          "BY": 300,
+          "BH": 1296
+        }
+      }
+    },
+    "pl_general": {
+      "rows": 33601,
+      "predictors": 388,
+      "cells": 25220,
+      "eligible": 23335,
+      "controls": 40670,
+      "BY": 622,
+      "BH": 1893,
+      "representations": {
+        "phonemes": {
+          "BY": 113,
+          "BH": 290
+        },
+        "phoneme_features": {
+          "BY": 102,
+          "BH": 227
+        },
+        "phoneme_bigrams": {
+          "BY": 407,
+          "BH": 1376
+        }
+      }
+    }
+  },
+  "specifications": {
+    "ame_general": {
+      "frozen_at": "2026-10-06",
+      "frozen_before_production_results_inspected": true,
+      "retrospective_analysis_disclosure": "Revised control specification informed by October 5 discrepancy diagnostics; not preregistration.",
+      "dataset_id": "ame_general",
+      "dataset_label": "ame_general: additive structural-control comparison",
+      "language": "English",
+      "lexicon_type": "general",
+      "analysis_n": 32217,
+      "morphology_controls": 27718,
+      "registered_predictors": 383,
+      "semantic_outcomes": 65,
+      "hypothesis_family_size": 24895,
+      "outcome_transform": "within-language average-tie empirical midrank (rank - 0.5)/N",
+      "fixed_covariates": [
+        "intercept",
+        "phoneme_length_z",
+        "pos_adj",
+        "pos_adv",
+        "pos_verb"
+      ],
+      "c_y": 1.1,
+      "c_d": 1.1,
+      "d_loading_refinement": "single",
+      "y_selector": "rigorous linear Lasso; maximum five post-Lasso residual loading updates plus final solve at returned loadings",
+      "d_selector": "weighted logistic Lasso; fixed-only one-pass rowwise score loadings; loading_refinement=single",
+      "coefficient_model": "complete Y/D selected morphology union plus all fixed controls; no top-k, nuisance-support cap, or outcome screen",
+      "covariance": "root_cluster_cr1",
+      "reference_distribution": "t",
+      "cluster_reference_df": "number of recorded root-family clusters minus 1",
+      "root_family_count": 15136,
+      "registration_minority_prevalence": 0.004,
+      "minority_prevalence_floor": 0.005,
+      "d_side_r2_limit": 0.9,
+      "full_union_r2_caution": 0.9,
+      "exact_nonidentification_rule": "D residual SS <= max(1e-12,1e-12*D TSS)",
+      "multiplicity_primary": "per-language global BY q=.05 over entire registered predictor x 65 family",
+      "multiplicity_exploratory": "per-language global BH q=.05 over same family",
+      "ineligible_bookkeeping": "p_for_correction=1; raw p and reasons remain separate",
+      "seed": 20261003,
+      "data_sha256": "00fc0e1a50c3beb0fe7edb0a3e69096fd9457aaf9f9fbe0d0fdb74b19f616a62",
+      "design_hashes": {
+        "morphology": "1a4b1f95317cdd0c31e41f87a23361a335d7f7932cfd2504a2ff4a6c0cf27439",
+        "fixed": "1ab27ee69d8f466c62795ef6dd8290e2f151f0b512aa5ee581b399c6c3c82e67",
+        "outcomes": "f8199f7cf879c7070d19fd5402273a844a7aceb37b7e1ad1c6c8cecba1ee51fd",
+        "predictors": "b276d70d0355fa2c3cbccceef195a969f09a7354ef056485bbcc87ffc8a7f434",
+        "rows": "664f86f08bd1a9db46a90fcc87dd137e2e84f496d21ea3a6d8f11296f3f8e22c"
+      },
+      "metadata_hashes": {
+        "morphology_metadata": "801b366a01115877d6f1b84768d3c822342891469bb67e58f8230a7f7bede17e",
+        "fixed_covariate_metadata": "b6a60eda7fb36e34837e5e39c048d364eed80641ad05c00cb977ba8030fd7597",
+        "predictor_metadata": "51fc432098c3f75043e810bfc304564f6117f34ef77a6b4d90bc39d98225900c",
+        "outcome_metadata": "f60311176f36c27e1a821da040fef4a16e76da6bb2646be966ab5b1561b86c76",
+        "input_manifest": "db3488f2f0aa5e5fa4202a00fd7dba512d2b22c409921ae6aa19dfb43f8dbc87",
+        "binder_mapping": "11148aa1bd15d3d9d2c6cb8e09e979530f8d98dd7c7c981d749572cbe6c7a1ab"
+      },
+      "code_hashes": {
+        "analysis\\pds_clean_2026-10-03\\run_clean_pds.py": "4d002d188e139fd0d23f3ce8ca567eae34a797f859d5fca214c9eb5e3a6e41a4",
+        "analysis\\pds_clean_2026-10-03\\spec\\numerical_guards.py": "1fd7d848426f8220b5cca69d13c6e1ae8be8db8dd61b71a54e6901ae09c8cb44",
+        "analysis\\pds_clean_2026-10-03\\spec\\POLICY_FREEZE.json": "6dd61f9529cbbca70952645070657f79642e00bd32b23071f9650f86933645e8",
+        "analysis\\pds_final_2026-09-16\\production_pds.py": "d8d365ae7164028466aabd600720a0d2380a16efa1980900b7627139eed39ea7",
+        "analysis\\pds_pilot\\logistic_nuisance.py": "5822f499ff430633659528606848f0a9db0959204c6f7724e85695fc1669f77f",
+        "analysis\\pl_general_pds_2026-09-09\\run_pds.py": "d494b761c7729bd57b846c9390dfcff904fa9a95231b7553e25a09c01f937333",
+        "analysis\\pds_ai_morphology_2026-10-05\\run_clean_pds.py": "5d3123ac7c2abd8751ef0ade1b0b76ba94e419ae8e0461451b2ec651193a03d1",
+        "analysis\\pds_ai_morphology_2026-10-05\\build_comparison.py": "90705507b14d746663f37b79a8b1ba86e86bd34a1eafa1dde3b7c474b950d818",
+        "analysis\\pds_ai_morphology_2026-10-05\\run_all.py": "5bd7f5e6865e77344726494aaaa79234fec18b668e47c50929bda201e4f27fc8",
+        "analysis\\pds_ai_morphology_2026-10-05\\summarize_comparison.py": "76a1821f74a5df84297a702990d294e9bf8da342533bf02c224d42826c5c240b",
+        "analysis\\pds_ai_morphology_2026-10-05\\spec\\numerical_guards.py": "1fd7d848426f8220b5cca69d13c6e1ae8be8db8dd61b71a54e6901ae09c8cb44",
+        "analysis\\pds_ai_morphology_2026-10-05\\spec\\verify_real_panel.py": "c5c311d645b38167b80cad9370b60a30d8e9e5fba100ed6f8c116bb45f454aaa"
+      },
+      "artifact_hashes": {
+        "analysis\\pds_additive_structure_2026-10-06\\CONTROL_POLICY.md": "d0994288a9ca1e9dafcebcec2626693b6cc2e310a073d748a8816054ea4e6310",
+        "analysis\\pds_additive_structure_2026-10-06\\workflow.py": "b0136d16120e1c12ed785248e4010710ed84f0b3ddf1534c5187c266f6a3b215",
+        "analysis\\pds_additive_structure_2026-10-06\\design\\ame_general\\outputs\\morphology_metadata.csv": "801b366a01115877d6f1b84768d3c822342891469bb67e58f8230a7f7bede17e",
+        "analysis\\pds_additive_structure_2026-10-06\\design\\ame_general\\outputs\\fixed_covariate_metadata.csv": "b6a60eda7fb36e34837e5e39c048d364eed80641ad05c00cb977ba8030fd7597",
+        "analysis\\pds_additive_structure_2026-10-06\\design\\ame_general\\outputs\\predictor_metadata.csv": "51fc432098c3f75043e810bfc304564f6117f34ef77a6b4d90bc39d98225900c",
+        "analysis\\pds_additive_structure_2026-10-06\\design\\ame_general\\outputs\\outcome_metadata.csv": "f60311176f36c27e1a821da040fef4a16e76da6bb2646be966ab5b1561b86c76",
+        "analysis\\pds_additive_structure_2026-10-06\\design\\ame_general\\cache\\input_manifest.json": "db3488f2f0aa5e5fa4202a00fd7dba512d2b22c409921ae6aa19dfb43f8dbc87",
+        "analysis\\pds_final_2026-09-16\\spec\\binder_mapping\\binder_dimension_mapping.csv": "11148aa1bd15d3d9d2c6cb8e09e979530f8d98dd7c7c981d749572cbe6c7a1ab",
+        "analysis\\pds_clean_2026-10-03\\design\\ame_general\\cache\\morphology.npz": "7984f103624833d2482a11e69e2fb242d55b4b5bcfdcb1f3f6dbfbddcf94c9bb",
+        "analysis\\pds_clean_2026-10-03\\design\\ame_general\\outputs\\morphology_metadata.csv": "3bd8a177c960cb4856825a93df7aa55bc7c1386cbf5765653b09a595830c99f3",
+        "analysis\\pds_ai_morphology_2026-10-05\\design\\ame_general\\cache\\morphology.npz": "14ac9b456b3adcb073e6f700d6c220d210448dc7b9b70a3d76c697f7f40bb18d",
+        "analysis\\pds_ai_morphology_2026-10-05\\design\\ame_general\\outputs\\morphology_metadata.csv": "31c6c6b389ded6f74df10dc4df57ec87a627a10eecbdce60aa2a2687c9d72dba"
+      },
+      "declared_assumptions": [
+        "Recorded root families adequately contain dependence; shared sentences/model prediction error may cross recorded families.",
+        "Rowwise nuisance loadings remain a project adaptation under clustering, not a theorem-backed dependent-data selection guarantee.",
+        "Predicted outcomes and ranks are treated as observed; upstream prediction/aggregation uncertainty is not propagated.",
+        "Sparse adjustment is adequate for principal morphology confounding, without gold linguistic validation.",
+        "Old calibration does not establish coverage on new cohorts or this hybrid procedure.",
+        "AI annotations are unreviewed candidates; comparative rerun does not establish linguistic accuracy.",
+        "Additive supplied/AI/Morfessor/recorded-audit controls plus common boundary-candidate rule; candidates are not gold-standard morphemes; no proven equality of coverage."
+      ],
+      "policy_freeze_sha256": "6dd61f9529cbbca70952645070657f79642e00bd32b23071f9650f86933645e8",
+      "all_supports_must_be_regenerated": true,
+      "candidate_data_sha256": "582ddfe3b6a63011dd5f1aa6d9b48c75bcbf04af362458f8ece1c13957133b29",
+      "annotation_assumptions": {
+        "accuracy_validated": false,
+        "missing_normalized_roots": [
+          {
+            "row_id": 1128,
+            "word": "anthropology",
+            "pos": "noun"
+          },
+          {
+            "row_id": 1308,
+            "word": "aquanaut",
+            "pos": "noun"
+          }
+        ],
+        "missing_root_policy": "No root indicator invented; component and affix indicators retained",
+        "AI_tokens_retained_verbatim": true,
+        "recorded_root_clusters": "Unchanged October 3 clusters; AI family links are not adopted",
+        "retained_non_supplied_baseline_patterns": 219,
+        "raw_AI_columns": 33174
+      }
+    },
+    "pl_general": {
+      "frozen_at": "2026-10-06",
+      "frozen_before_production_results_inspected": true,
+      "retrospective_analysis_disclosure": "Revised control specification informed by October 5 discrepancy diagnostics; not preregistration.",
+      "dataset_id": "pl_general",
+      "dataset_label": "pl_general: additive structural-control comparison",
+      "language": "Polish",
+      "lexicon_type": "general",
+      "analysis_n": 33601,
+      "morphology_controls": 40670,
+      "registered_predictors": 388,
+      "semantic_outcomes": 65,
+      "hypothesis_family_size": 25220,
+      "outcome_transform": "within-language average-tie empirical midrank (rank - 0.5)/N",
+      "fixed_covariates": [
+        "intercept",
+        "phoneme_length_z",
+        "pos_adj",
+        "pos_adv",
+        "pos_verb"
+      ],
+      "c_y": 1.1,
+      "c_d": 1.1,
+      "d_loading_refinement": "single",
+      "y_selector": "rigorous linear Lasso; maximum five post-Lasso residual loading updates plus final solve at returned loadings",
+      "d_selector": "weighted logistic Lasso; fixed-only one-pass rowwise score loadings; loading_refinement=single",
+      "coefficient_model": "complete Y/D selected morphology union plus all fixed controls; no top-k, nuisance-support cap, or outcome screen",
+      "covariance": "root_cluster_cr1",
+      "reference_distribution": "t",
+      "cluster_reference_df": "number of recorded root-family clusters minus 1",
+      "root_family_count": 12027,
+      "registration_minority_prevalence": 0.004,
+      "minority_prevalence_floor": 0.005,
+      "d_side_r2_limit": 0.9,
+      "full_union_r2_caution": 0.9,
+      "exact_nonidentification_rule": "D residual SS <= max(1e-12,1e-12*D TSS)",
+      "multiplicity_primary": "per-language global BY q=.05 over entire registered predictor x 65 family",
+      "multiplicity_exploratory": "per-language global BH q=.05 over same family",
+      "ineligible_bookkeeping": "p_for_correction=1; raw p and reasons remain separate",
+      "seed": 20261003,
+      "data_sha256": "ca09c62e8a1cabc442331cacea8752bed0b12e629fd680895eacbe8ff0479b92",
+      "design_hashes": {
+        "morphology": "86b5773f53c5d72e034a8647803a879287ebecae6e83ef8b5c59f5e2698dcdea",
+        "fixed": "d3e989abf2107096cf0756c4ec47b58f26fe2fdbf491f8123f47802db6438253",
+        "outcomes": "b801ff5d773002eb4054301cc7bb453c55444dea69125a705ad97cdd55cbfd45",
+        "predictors": "db783b04ace802e2520abdbfdc6ba62ab5cfc17e2b97e9e019cb385abd5e59c7",
+        "rows": "ebc07f8db0e156c9061525b3e8d6152d15cab1a83e74af370e8f8a42f86d27a7"
+      },
+      "metadata_hashes": {
+        "morphology_metadata": "4e080e16566d8c723628cdd662cbba287361c8b3534a6e39bd3ed05a863bb89b",
+        "fixed_covariate_metadata": "b6a60eda7fb36e34837e5e39c048d364eed80641ad05c00cb977ba8030fd7597",
+        "predictor_metadata": "1b29471f7618ab660c651bf1bcd4998827e223e0c6ed04938c1024c29e1adcd8",
+        "outcome_metadata": "f60311176f36c27e1a821da040fef4a16e76da6bb2646be966ab5b1561b86c76",
+        "input_manifest": "1b381dc2c8b5b79d80de443db7df33054a7a2a1f3eb2e4a66642eeb20e31ad48",
+        "binder_mapping": "11148aa1bd15d3d9d2c6cb8e09e979530f8d98dd7c7c981d749572cbe6c7a1ab"
+      },
+      "code_hashes": {
+        "analysis\\pds_clean_2026-10-03\\run_clean_pds.py": "4d002d188e139fd0d23f3ce8ca567eae34a797f859d5fca214c9eb5e3a6e41a4",
+        "analysis\\pds_clean_2026-10-03\\spec\\numerical_guards.py": "1fd7d848426f8220b5cca69d13c6e1ae8be8db8dd61b71a54e6901ae09c8cb44",
+        "analysis\\pds_clean_2026-10-03\\spec\\POLICY_FREEZE.json": "6dd61f9529cbbca70952645070657f79642e00bd32b23071f9650f86933645e8",
+        "analysis\\pds_final_2026-09-16\\production_pds.py": "d8d365ae7164028466aabd600720a0d2380a16efa1980900b7627139eed39ea7",
+        "analysis\\pds_pilot\\logistic_nuisance.py": "5822f499ff430633659528606848f0a9db0959204c6f7724e85695fc1669f77f",
+        "analysis\\pl_general_pds_2026-09-09\\run_pds.py": "d494b761c7729bd57b846c9390dfcff904fa9a95231b7553e25a09c01f937333",
+        "analysis\\pds_ai_morphology_2026-10-05\\run_clean_pds.py": "5d3123ac7c2abd8751ef0ade1b0b76ba94e419ae8e0461451b2ec651193a03d1",
+        "analysis\\pds_ai_morphology_2026-10-05\\build_comparison.py": "90705507b14d746663f37b79a8b1ba86e86bd34a1eafa1dde3b7c474b950d818",
+        "analysis\\pds_ai_morphology_2026-10-05\\run_all.py": "5bd7f5e6865e77344726494aaaa79234fec18b668e47c50929bda201e4f27fc8",
+        "analysis\\pds_ai_morphology_2026-10-05\\summarize_comparison.py": "76a1821f74a5df84297a702990d294e9bf8da342533bf02c224d42826c5c240b",
+        "analysis\\pds_ai_morphology_2026-10-05\\spec\\numerical_guards.py": "1fd7d848426f8220b5cca69d13c6e1ae8be8db8dd61b71a54e6901ae09c8cb44",
+        "analysis\\pds_ai_morphology_2026-10-05\\spec\\verify_real_panel.py": "c5c311d645b38167b80cad9370b60a30d8e9e5fba100ed6f8c116bb45f454aaa"
+      },
+      "artifact_hashes": {
+        "analysis\\pds_additive_structure_2026-10-06\\CONTROL_POLICY.md": "d0994288a9ca1e9dafcebcec2626693b6cc2e310a073d748a8816054ea4e6310",
+        "analysis\\pds_additive_structure_2026-10-06\\workflow.py": "b0136d16120e1c12ed785248e4010710ed84f0b3ddf1534c5187c266f6a3b215",
+        "analysis\\pds_additive_structure_2026-10-06\\design\\pl_general\\outputs\\morphology_metadata.csv": "4e080e16566d8c723628cdd662cbba287361c8b3534a6e39bd3ed05a863bb89b",
+        "analysis\\pds_additive_structure_2026-10-06\\design\\pl_general\\outputs\\fixed_covariate_metadata.csv": "b6a60eda7fb36e34837e5e39c048d364eed80641ad05c00cb977ba8030fd7597",
+        "analysis\\pds_additive_structure_2026-10-06\\design\\pl_general\\outputs\\predictor_metadata.csv": "1b29471f7618ab660c651bf1bcd4998827e223e0c6ed04938c1024c29e1adcd8",
+        "analysis\\pds_additive_structure_2026-10-06\\design\\pl_general\\outputs\\outcome_metadata.csv": "f60311176f36c27e1a821da040fef4a16e76da6bb2646be966ab5b1561b86c76",
+        "analysis\\pds_additive_structure_2026-10-06\\design\\pl_general\\cache\\input_manifest.json": "1b381dc2c8b5b79d80de443db7df33054a7a2a1f3eb2e4a66642eeb20e31ad48",
+        "analysis\\pds_final_2026-09-16\\spec\\binder_mapping\\binder_dimension_mapping.csv": "11148aa1bd15d3d9d2c6cb8e09e979530f8d98dd7c7c981d749572cbe6c7a1ab",
+        "analysis\\pds_clean_2026-10-03\\design\\pl_general\\cache\\morphology.npz": "c982dea630c702ae9dbce7c347f21d1b669d0150cc115151cde5af733fcfd7ad",
+        "analysis\\pds_clean_2026-10-03\\design\\pl_general\\outputs\\morphology_metadata.csv": "66967f2b2ac4e7775edfdcd785626def397d5b0a6b6af0f2e741c74039ecc260",
+        "analysis\\pds_ai_morphology_2026-10-05\\design\\pl_general\\cache\\morphology.npz": "d4e03e94add605bfca509a3efc235d84e9b20b8510172af48f9a1f5ad0293561",
+        "analysis\\pds_ai_morphology_2026-10-05\\design\\pl_general\\outputs\\morphology_metadata.csv": "585c2f38f8ea4670449ef51f2107b8d790f9088fd6b82ff06bf1a23dc2ac3635"
+      },
+      "declared_assumptions": [
+        "Recorded root families adequately contain dependence; shared sentences/model prediction error may cross recorded families.",
+        "Rowwise nuisance loadings remain a project adaptation under clustering, not a theorem-backed dependent-data selection guarantee.",
+        "Predicted outcomes and ranks are treated as observed; upstream prediction/aggregation uncertainty is not propagated.",
+        "Sparse adjustment is adequate for principal morphology confounding, without gold linguistic validation.",
+        "Old calibration does not establish coverage on new cohorts or this hybrid procedure.",
+        "AI annotations are unreviewed candidates; comparative rerun does not establish linguistic accuracy.",
+        "Additive supplied/AI/Morfessor/recorded-audit controls plus common boundary-candidate rule; candidates are not gold-standard morphemes; no proven equality of coverage."
+      ],
+      "policy_freeze_sha256": "6dd61f9529cbbca70952645070657f79642e00bd32b23071f9650f86933645e8",
+      "all_supports_must_be_regenerated": true,
+      "candidate_data_sha256": "a5286aeb384278b6068e006c068dfd5761c3b335ccd64dbe40856801d41b7eff",
+      "annotation_assumptions": {
+        "accuracy_validated": false,
+        "missing_normalized_roots": [],
+        "missing_root_policy": "No root indicator invented; component and affix indicators retained",
+        "AI_tokens_retained_verbatim": true,
+        "recorded_root_clusters": "Unchanged October 3 clusters; AI family links are not adopted",
+        "retained_non_supplied_baseline_patterns": 465,
+        "raw_AI_columns": 48251
+      }
+    }
+  },
+  "annotation_configuration": {
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "semantic_inputs": false
+  },
+  "morfessor_source_patterns": {
+    "ame_general": 219,
+    "pl_general": 174
+  },
+  "licensing": "No blanket data license assigned; review source/project redistribution rights."
+}

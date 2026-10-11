@@ -1,0 +1,20 @@
+[
+  {
+    "label": "Original controls",
+    "English_BY": 1517,
+    "Polish_BY": 828,
+    "ratio": 1.8321256038647342
+  },
+  {
+    "label": "AI controls",
+    "English_BY": 1958,
+    "Polish_BY": 791,
+    "ratio": 2.475347661188369
+  },
+  {
+    "label": "Additive structural controls",
+    "English_BY": 674,
+    "Polish_BY": 622,
+    "ratio": 1.0836012861736335
+  }
+]

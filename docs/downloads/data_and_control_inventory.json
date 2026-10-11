@@ -1,0 +1,50 @@
+{
+  "ame_general": {
+    "rows": 32217,
+    "unique_spellings": 26156,
+    "retained_target_token_ratings": 3286504,
+    "processed_deduplicated_sentence_records": 2396245,
+    "sentence_record_definition": "Distinct sentence-text plus ordered rated-target payload after sentence-level filtering; may include records whose targets are later excluded. Not necessarily distinct sentence texts or all original model inputs.",
+    "controls": {
+      "archived_original_patterns": 11296,
+      "additional_AI_patterns": 14947,
+      "additional_boundary_patterns": 1475,
+      "total": 27718,
+      "source_categories_overlapping": {
+        "AI:ai_candidate_morphology": 23397,
+        "AI:orthographic_morfessor": 218,
+        "common_rule_boundary_candidate": 2330,
+        "original:orthographic_morfessor": 219,
+        "original:supplied_morphology": 11077,
+        "orthographic_morfessor": 1
+      },
+      "additional_AI_annotation_patterns": 14947,
+      "additional_AI_design_other_patterns": 0
+    }
+  },
+  "pl_general": {
+    "rows": 33601,
+    "unique_spellings": 33475,
+    "retained_target_token_ratings": 2209772,
+    "processed_deduplicated_sentence_records": 1694888,
+    "sentence_record_definition": "Distinct sentence-text plus ordered rated-target payload after sentence-level filtering; may include records whose targets are later excluded. Not necessarily distinct sentence texts or all original model inputs.",
+    "controls": {
+      "archived_original_patterns": 12888,
+      "additional_AI_patterns": 27337,
+      "additional_boundary_patterns": 445,
+      "total": 40670,
+      "source_categories_overlapping": {
+        "AI:ai_candidate_morphology": 34617,
+        "AI:historical_surface_affix_audit": 283,
+        "AI:orthographic_morfessor": 174,
+        "common_rule_boundary_candidate": 769,
+        "historical_surface_affix_audit": 15,
+        "original:historical_surface_affix_audit": 281,
+        "original:orthographic_morfessor": 174,
+        "original:supplied_morphology": 12433
+      },
+      "additional_AI_annotation_patterns": 27337,
+      "additional_AI_design_other_patterns": 0
+    }
+  }
+}
